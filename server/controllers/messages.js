@@ -42,4 +42,20 @@ module.exports = {
       })
       .catch(err => console.log(err))
   },
+
+  login: function(req, res) {
+    console.log(req.body)
+    req.session.name = req.body.name
+    req.session.complete = false
+    console.log(req.session.name)
+    res.json(true)
+  },
+
+  get_stream: function(req, res) {
+    if(req.session.name){
+			res.json(req.session.name)
+		} else {
+			res.status(500).json(false)
+		}
+  }
 }

@@ -3,6 +3,8 @@ module.exports = function(app) {
   app.get('/', messages.index);
   app.get('/activate', messages.activate)
   app.get('/home', messages.index);
+  app.post('/login', messages.login)
+  app.get("/get_stream", messages.get_stream)
   // app.post('/addNote', messages.addMessage)
   // send any other requests to angular for routing
   app.all("*", (req,res,next) => {

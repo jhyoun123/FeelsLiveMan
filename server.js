@@ -6,6 +6,7 @@ const app = express();
 // require express sessions
 const session = require("express-session")
 // use sessions
+// var twitch = angular.module('app', ['angularjs.media.directives']);
 app.use(session({
 	secret: "secret secret secret secret",
 	resave: false,
